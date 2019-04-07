@@ -19,8 +19,8 @@ def get_f1_score(y_test,y_predict):
     f1_score = P * R / (P + R)
     return f1_score
 
-cancer_std = load_breast_cancer()
-X_train,X_test,y_train,y_test = train_test_split(cancer_std.data,cancer_std.target,test_size=0.3)
+cancer = load_breast_cancer()
+X_train,X_test,y_train,y_test = train_test_split(cancer.data,cancer.target,test_size=0.3)
 model = KNeighborsClassifier()
 model.fit(X_train,y_train)
 y_predict = model.predict(X_test)

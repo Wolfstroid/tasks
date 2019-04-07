@@ -14,8 +14,8 @@ def get_precison(y_predict,y_test):
     precision = true_positive/predict_positive
     return precision
 
-cancer_std = load_breast_cancer()
-X_train,X_test,y_train,y_test = train_test_split(cancer_std.data,cancer_std.target,test_size=0.3)
+cancer = load_breast_cancer()
+X_train,X_test,y_train,y_test = train_test_split(cancer.data,cancer.target,test_size=0.3)
 model = KNeighborsClassifier()
 model.fit(X_train,y_train)
 y_predict = model.predict(X_test)
